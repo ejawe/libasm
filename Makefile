@@ -1,6 +1,6 @@
 NAME = libasm.a
 
-SRCS = ft_strlen.s ft_strcpy.s
+SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s
 
 SFLAGS = -f elf64
 CFLAGS = -Wall -Werror -Wextra -g
@@ -15,6 +15,7 @@ $(NAME): $(OBJS) Makefile
 
 clean:
 	rm -f $(OBJS)
+	rm -f main.o
 
 fclean: clean
 	rm -f $(NAME)
