@@ -5,8 +5,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#define TEST_FILE "mine.txt"
-#define TEST_FILE2 "real.txt"
+#define TEST_FILE "test1.txt"
+#define TEST_FILE2 "test2.txt"
 #define BUFF_SIZE 64
 
 ssize_t	ft_strlen(char *str);
@@ -45,11 +45,11 @@ int main()
 	char	*up;
 	char	*up2;
 	char	*empty1;
-//	char	*empty2;
-//	char	*null;
+	//char	*empty2;
+	char	*null;
 	empty1 = "";
-//	empty2 = "";
-//	null = NULL;
+	//empty2 = "";
+	null = NULL;
 	printf("\n-----------------------------\n");
 	printf("----STRLEN--&--FT_STRLEN-----\n");
 	printf("-----------------------------\n");
@@ -58,7 +58,7 @@ int main()
 	printf("\nEMPTY STR\n");
 	printf("str = [%s]\nSTRLEN = \t%zu\tFT_STRLEN = \t%zu\n", empty1, strlen(empty1), ft_strlen(empty1));
 		// a strlen of a null str should result to a segfault
-/*	printf("\nSEGFAULT STR\n");
+	/*printf("\nSEGFAULT STR\n");
 	printf("str = [%s]\nSTRLEN = %zu\n", null, strlen(null));
 	printf("str = [%s]\nFT_STRLEN = %zu\n", null, ft_strlen(null));*/
 	printf("\n-------------------------------\n");
@@ -100,6 +100,9 @@ int main()
 	printf("\nONE EMPTY STR\t|%s|\tVS\t|%s|\n", s1, empty1);
 	printf("FT_STRCMP =\t%d\n", ft_strcmp(s1, empty1));
 	printf("STRCMP =\t%d\n", strcmp(s1, empty1));
+	printf("\nONE EMPTY STR\t|%s|\tVS\t|%s|\n", empty1, s1);
+	printf("FT_STRCMP =\t%d\n", ft_strcmp(empty1, s1));
+	printf("STRCMP =\t%d\n", strcmp(empty1, s1));
 	printf("\nTWO EMPTY STR\t|%s|\tVS\t|%s|\n", empty1, empty1);
 	printf("FT_STRCMP =\t%d\n", ft_strcmp(empty1, empty1));
 	printf("STRCMP =\t%d\n", strcmp(empty1, empty1));	
@@ -223,7 +226,7 @@ int main()
 	free(up2);
 	printf("OK\n");
 	// a strdup of a null str result to a segfault
-/*	errno = 0;
+	/*errno = 0;
 	printf("\nSEGFAULT TEST : NULL STR\n");
 	printf("A dupliquer =\t|%s|\t{%p}\n", null, null);
 	up = ft_strdup(null);
@@ -236,6 +239,6 @@ int main()
 	printf("OK\n");
 	printf("On essaie de free la chaine cree avec STRDUP\t");
 	free(up2);
-	printf("OK\n"); */
+	printf("OK\n");*/
 	return(0);
 }

@@ -2,10 +2,10 @@ section .text
 global ft_read
 extern __errno_location
 
-; les arg sont directement pris en compte par le syscall write
+; les arg sont directement pris en compte par le syscall read
 
 ft_read:
-        mov rax , 0     ; num d'app system de write sur linux
+        mov rax , 0     ; num d'app system de read sur linux
         syscall         ; app system
         cmp rax , 0     ; verification d'erreur
         jl  error       ; si rax (qui correspond au retour du syscall) negatif = error
